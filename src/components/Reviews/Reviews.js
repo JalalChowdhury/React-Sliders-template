@@ -2,7 +2,7 @@ import React from "react";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { EffectCoverflow, Pagination } from 'swiper';
+import SwiperCore, { Autoplay, EffectCoverflow, Pagination } from 'swiper';
 
 // Import Swiper styles
 import 'swiper/swiper-bundle.min.css';
@@ -12,7 +12,7 @@ import { Container } from "react-bootstrap";
 // import BlueSpinner from "../../Shared/Spinner/Spinner";
 import Review from "./Review/Review";
 
-SwiperCore.use([EffectCoverflow, Pagination]);
+SwiperCore.use([Autoplay, EffectCoverflow, Pagination]);
 
 const Reviews = () => {
 
@@ -67,6 +67,10 @@ const Reviews = () => {
                 </h2>
 
                 <Swiper
+                    autoplay={{
+                        "delay": 2500,
+                        "disableOnInteraction": false
+                    }}
                     effect={'coverflow'}
                     grabCursor={true}
                     centeredSlides={true}
@@ -84,7 +88,7 @@ const Reviews = () => {
                     {
                         reviews.map((review) => {
                             return (
-                                <SwiperSlide className="slider-custom" >
+                                <SwiperSlide className="slider-custom" data-swiper-autoplay="2000">
                                     {/* <h1>Ami Asi </h1> */}
                                     <Review review={review} />
                                 </SwiperSlide>
