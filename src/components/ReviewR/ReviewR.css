@@ -1,0 +1,26 @@
+.icon-color {
+    color: goldenrod;
+}
+
+.review-img {
+    max-width: 90px;
+    max-height: 180px;
+    position: relative;
+    left: 43%;
+    top: 50px;
+}
+
+.headerTxt {
+    padding-top: 40px;
+}
+
+@media only screen and (max-width:688px) {
+
+    .review-img {
+
+        position: relative;
+        left: 32%;
+        top: 50px;
+    }
+
+}
